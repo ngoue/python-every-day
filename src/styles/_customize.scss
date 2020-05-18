@@ -1,0 +1,8 @@
+$python-blue: #306998;
+$python-yellow: #ffd43b;
+
+$theme-colors: (
+    'primary': $python-blue,
+    'warning': $python-yellow,
+);
+@import "~bootstrap/scss/bootstrap";
