@@ -12,6 +12,8 @@ module.exports = {
     description: "Everyday Python from someone who uses Python every day",
   },
   plugins: [
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-root-import",
     "gatsby-plugin-sass",
     {
@@ -26,6 +28,19 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         // display: "standalone",
         icon: "src/images/python.png",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: "posts",
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [],
       },
     },
   ],
