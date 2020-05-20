@@ -20,6 +20,8 @@ From the docs:
 > unobtrusive, and follows the UNIX tradition of single-purpose tools that do
 > one thing well.
 
+---
+
 ## Installation Guide
 
 Follow these steps to install `pyenv` on macOS. We'll be installing `pyenv` via
@@ -59,7 +61,7 @@ ahead and install Python 3.8.2:
 $ pyenv install 3.8.2
 ```
 
-### Missing `zlib`?
+##### _Missing `zlib`?_
 
 On some versions of macOS you may encounter issues related to `zlib` not being
 found.

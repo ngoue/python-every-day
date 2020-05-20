@@ -1,1 +1,54 @@
 @import "customize";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: $headings-margin-bottom;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+  $headings: "h1", "h2", "h3", "h4", "h5", "h6";
+  $headings-font-size: (
+    "h1": $h1-font-size,
+    "h2": $h2-font-size,
+    "h3": $h3-font-size,
+    "h4": $h4-font-size,
+    "h5": $h5-font-size,
+    "h6": $h6-font-size,
+  );
+
+  @each $heading in $headings {
+    #{$heading},
+    .#{$heading} {
+      font-size: map-get($headings-font-size, $heading) * .75;
+    }
+  }
+}
+
+pre {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $gray-200;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+@import "post";

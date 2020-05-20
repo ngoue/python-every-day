@@ -5,7 +5,7 @@ title: Python Development on macOS with pyenv-virtualenv
 ---
 
 This post is part 2. Make sure you read part 1:
-[Python Development on macOS with pyenv](./pyenv-macos)
+[Python Development on macOS with pyenv](./pyenv-macos).
 
 At this point you should have [`pyenv`](https://github.com/pyenv/pyenv)
 installed. You can now quickly install and switch between any version of Python
