@@ -7,18 +7,17 @@ export default ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
-      <h1>
+      <h1 className="mb-5">
         <SiteTitle />
       </h1>
       <div className="posts">
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => (
-            <div className="post-preview" key={post.id}>
+            <div className="post-preview mb-5" key={post.id}>
               <h2>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h2>
-              <p className="post-description lead">{post.frontmatter.description}</p>
               <p className="post-excerpt">{post.excerpt}</p>
             </div>
           ))}
@@ -37,7 +36,6 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            description
             path
           }
         }
