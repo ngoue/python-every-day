@@ -3,6 +3,10 @@ article.post {
     text-decoration: underline;
   }
 
+  pre > code[class*="language-"] {
+    word-wrap: normal;
+  }
+
   pre {
     font-size: 1.1rem;
 
