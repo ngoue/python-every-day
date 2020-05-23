@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const siteAddress = new URL("https://pythoneveryday.com")
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -17,6 +19,12 @@ module.exports = {
     "gatsby-plugin-root-import",
     "gatsby-plugin-sass",
     {
+      resolve: "gatsby-plugin-canonical-urls",
+      options: {
+        siteUrl: siteAddress.href.slice(0, -1),
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "python every day",
@@ -28,6 +36,14 @@ module.exports = {
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         // display: "standalone",
         icon: "src/images/python-every-day.png",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-s3",
+      options: {
+        bucketName: siteAddress.hostname,
+        protocol: siteAddress.protocol.slice(0, -1),
+        hostname: siteAddress.hostname,
       },
     },
     {

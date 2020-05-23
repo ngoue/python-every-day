@@ -11,15 +11,18 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "AWS_PROFILE=jordanthomasg gatsby-plugin-s3 deploy --yes && AWS_PAGER=\"\" aws cloudfront create-invalidation --profile jordanthomasg --distribution-id E1FNZ6P8NF4NZ --paths \"/*\""
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
     "gatsby": "^2.21.22",
+    "gatsby-plugin-canonical-urls": "^2.3.2",
     "gatsby-plugin-catch-links": "^2.3.1",
     "gatsby-plugin-manifest": "^2.4.3",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-s3": "^0.3.3",
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-remark": "^2.8.9",
