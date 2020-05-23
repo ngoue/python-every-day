@@ -5,7 +5,10 @@ const gatsbyGDPRCookieName = "gatsby-gdpr-google-analytics"
 const gatsbyGDPRCookieAge = 60 * 60 * 24 * 365 * 2 // 2 years
 
 export default () => {
-  const _hasResponse = document.cookie.includes(gatsbyGDPRCookieName)
+  const _hasResponse =
+    typeof document !== "undefined"
+      ? document.cookie.includes(gatsbyGDPRCookieName)
+      : null
   const [hasResponse, setHasResponse] = React.useState(_hasResponse)
 
   const handleGDPR = accepted => {

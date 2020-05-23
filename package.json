@@ -12,7 +12,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "AWS_PROFILE=jordanthomasg gatsby-plugin-s3 deploy --yes && AWS_PAGER=\"\" aws cloudfront create-invalidation --profile jordanthomasg --distribution-id E1FNZ6P8NF4NZ --paths \"/*\""
+    "deploy": "AWS_PROFILE=jordanthomasg gatsby-plugin-s3 deploy --yes && AWS_PAGER=\"\" aws cloudfront create-invalidation --profile jordanthomasg --distribution-id E1FNZ6P8NF4NZ --paths \"/*\"",
+    "up": "yarn build && yarn deploy"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
