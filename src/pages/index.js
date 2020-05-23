@@ -23,15 +23,19 @@ export default ({ data }) => {
           <div className="posts">
             {posts
               .filter(post => post.node.frontmatter.title.length > 0)
-              .map(({ node: post }) => (
-                <div className="post-preview mb-5" key={post.id}>
-                  <h2>
-                    <Link to={post.frontmatter.path}>
-                      {post.frontmatter.title}
-                    </Link>
-                  </h2>
-                  <p className="post-excerpt">{post.excerpt}</p>
-                </div>
+              .map(({ node: post }, index) => (
+                <React.Fragment key={post.id}>
+                  <div className="post-preview mb-5">
+                    <h2>
+                      <Link to={post.frontmatter.path}>
+                        {post.frontmatter.title}
+                      </Link>
+                    </h2>
+                    <p className="text-muted text-uppercase text-monospace lead">{post.frontmatter.date}</p>
+                    <p className="post-excerpt">{post.excerpt}</p>
+                  </div>
+                  {index !== posts.length - 1 && <hr />}
+                </React.Fragment>
               ))}
           </div>
         </Col>

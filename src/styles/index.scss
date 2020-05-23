@@ -1,5 +1,7 @@
 @import "customize";
 
+$headings: "h1", "h2", "h3", "h4", "h5", "h6";
+
 h1,
 h2,
 h3,
@@ -13,10 +15,14 @@ h6,
 .h5,
 .h6 {
   margin-top: $headings-margin-bottom;
+
+  p + &,
+  pre + & {
+    margin-top: $headings-margin-bottom * 2.5;
+  }
 }
 
 @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-  $headings: "h1", "h2", "h3", "h4", "h5", "h6";
   $headings-font-size: (
     "h1": $h1-font-size,
     "h2": $h2-font-size,
@@ -29,7 +35,7 @@ h6,
   @each $heading in $headings {
     #{$heading},
     .#{$heading} {
-      font-size: map-get($headings-font-size, $heading) * .75;
+      font-size: map-get($headings-font-size, $heading) * 0.75;
     }
   }
 }
@@ -49,6 +55,10 @@ p {
   p {
     font-size: 1.1rem;
   }
+}
+
+hr {
+  width: 80%;
 }
 
 @import "post";

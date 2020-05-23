@@ -9,13 +9,25 @@ export default ({ data, pageContext }) => {
   const { previous, next } = pageContext
   return (
     <Layout>
+      <Helmet>
+        <title>python every day - {post.frontmatter.title}</title>
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="python every day" />
+        <meta
+          property="og:url"
+          content={`https://pythoneveryday.com${post.frontmatter.path}`}
+        />
+        <meta property="twitter:title" content={post.frontmatter.title} />
+        <meta property="twitter:site" content="@pythoneveryday" />
+        <meta property="twitter:creator" content="@pythoneveryday" />
+      </Helmet>
       <Row>
         <Col lg={2} className="d-none d-lg-block">
           {/* reserved for future use */}
         </Col>
         <Col>
           <div className="post-container">
-            <Helmet title={`python every day - ${post.frontmatter.title}`} />
             <article className="post">
               <h1 className="post-title">{post.frontmatter.title}</h1>
               <div
@@ -26,14 +38,24 @@ export default ({ data, pageContext }) => {
                 <Nav.Item>
                   {previous && (
                     <Nav.Link href={previous.frontmatter.path} rel="prev">
-                      <Button>Back</Button>
+                      <Button
+                        variant="link"
+                        className="font-weight-bold text-monospace"
+                      >
+                        &lt;&lt;&nbsp;previous
+                      </Button>
                     </Nav.Link>
                   )}
                 </Nav.Item>
                 <Nav.Item>
                   {next && (
                     <Nav.Link href={next.frontmatter.path} rel="next">
-                      <Button>Next</Button>
+                      <Button
+                        variant="link"
+                        className="font-weight-bold text-monospace"
+                      >
+                        next&nbsp;&gt;&gt;
+                      </Button>
                     </Nav.Link>
                   )}
                 </Nav.Item>
