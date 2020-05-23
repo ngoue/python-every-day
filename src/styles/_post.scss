@@ -3,15 +3,10 @@ article.post {
     text-decoration: underline;
   }
 
-  pre > code[class*="language-"] {
-    word-wrap: normal;
-  }
-
   pre {
     font-size: 1.1rem;
 
     code {
-      color: $body-color;
       padding: 0px;
     }
   }

@@ -17,10 +17,7 @@ export default ({ children }) => {
         <meta name="robots" content="index,follow" />
         <meta property="og:title" content="python every day" />
         <meta property="og:site_name" content="python every day" />
-        <meta
-          property="og:url"
-          content={`https://pythoneveryday.com${post.frontmatter.path}`}
-        />
+        <meta property="og:url" content="https://pythoneveryday.com" />
       </Helmet>
       <Navigation />
       <Container className="my-2">{children}</Container>
