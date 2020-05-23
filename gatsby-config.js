@@ -25,6 +25,16 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-gdpr-cookies",
+      options: {
+        googleAnalytics: {
+          trackingId: "UA-167491927-1",
+          anonymize: true,
+        },
+        environments: ["production"],
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "python every day",

@@ -19,6 +19,7 @@
     "gatsby": "^2.21.22",
     "gatsby-plugin-canonical-urls": "^2.3.2",
     "gatsby-plugin-catch-links": "^2.3.1",
+    "gatsby-plugin-gdpr-cookies": "^1.0.7",
     "gatsby-plugin-manifest": "^2.4.3",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-root-import": "^2.0.5",
