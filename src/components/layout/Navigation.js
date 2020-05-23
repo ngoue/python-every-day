@@ -1,13 +1,13 @@
 import React from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import SiteTitle from "src/components/SiteTitle"
-import logo from "src/images/python-small.png"
+import logo from "src/images/python-every-day-150.png"
 
 export default () => (
   <Navbar bg="primary" variant="dark" expand="lg" className="text-monospace">
     <Container>
       <Navbar.Brand href="/">
-        <div className="d-inline-block rounded-circle bg-white mr-3">
+        <div className="d-inline-block mr-1">
           <img
             className="p-1"
             src={logo}
